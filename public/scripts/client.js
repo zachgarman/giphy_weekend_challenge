@@ -14,19 +14,16 @@ function MainController($http) {
   main.randomGiphy = function() {
     $http.get(randomAPI)
          .then(function(response) {
-           console.log('response', response.data);
-           console.log(response.data.data.image_url);
-           main.image = response.data.data.image_url;
-           console.log(main.image);
+           main.random = response.data.data.image_url;
          });
   };
 
+  main.searchImages = [];
   main.searchGiphy = function () {
-    $http.get(searchAPI + main.search + searchKey)
+    $http.get(searchAPI + main.search.split(' ').join('+') + searchKey)
       .then(function(response){
-        console.log('search response', response);
-        main.image = response.data.data[0].images.original.url;
-        console.log('search main.image', main.image);
+        main.searchImages = response.data.data;
+        //.images.original.url;
       });
   };
 

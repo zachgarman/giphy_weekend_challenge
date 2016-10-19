@@ -10,13 +10,20 @@
 
   <body ng-app="giphyGetter" ng-controller="MainController as main">
     <main>
-      <button ng-click="main.randomGiphy()">Get Random Giphy</button>
+      <div class="random">
+        <button ng-click="main.randomGiphy()">Get Random Giphy</button>
+        <img ng-src="{{main.image}}" />
+      </div>
+
       <form>
         <input type="text" ng-model="main.search">
-        <button type="submit" ng-click="main.searchGiphy()">Search the Giphy</button>
+        <button type="submit" ng-click="main.searchGiphy() | limitTo:20">Search the Giphy</button>
       </form>
-      <img ng-src="{{main.image}}" />
-    </main>
+      <ol>
+        <li ng-repeat="image in main.searchImages"><img ng-src="{{image.images.original.url}}" />
+</li>
+      </ol>
+          </main>
 
   </body>
 </html>
