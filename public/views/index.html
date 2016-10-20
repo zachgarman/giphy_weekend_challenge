@@ -20,11 +20,11 @@
 
       <form>
         <input type="text" ng-model="main.search">
-        <input type="number" value="25" min="3" max="25" placeholder="25" ng-model="main.results" />
+        <input type="number" ng-model="searches" ng-init="searches=10" value="10" min="3" max="25" ng-model="main.results" />
         <button class="searchButton" type="submit" ng-click="main.searchGiphy()">Search the Giphy</button>
       </form>
       <ul>
-        <li ng-repeat="image in main.searchImages | limitTo: main.results" alt="search result image"><a href="{{image.images.original.url}}"><img class="searchImage" ng-src="{{image.images.original.url}}" /></a></li>
+        <li ng-repeat="image in main.searchImages | limitTo: searches" alt="search result image"><a href="{{image.images.original.url}}"><img class="searchImage" ng-src="{{image.images.original.url}}" /></a></li>
       </ul>
           </main>
 
