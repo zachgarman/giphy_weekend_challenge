@@ -1,5 +1,6 @@
-body {
-  background: midnightblue;
+html {
+  background: url('/images/need_wallpaper.png');
+  background-size: 100%;
 }
 main {
   text-align: center;
