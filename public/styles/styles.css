@@ -6,20 +6,39 @@ main {
 }
 h1 {
   text-align: center;
+  color: orange;
 }
 .random {
   margin-bottom: 50px;
+}
+.randomImage {
+  width: 500px;
+  height: auto;
+  border: 1px solid gray;
 }
 li {
   display:inline-block;
   margin: 10px;
 }
-img {
+.searchImage {
   height: auto;
   width: 300px;
-  border: 1px solid white;
+  border: 1px solid gray;
 }
-.randomGif {
+.randomButton {
   display: block;
   margin: 10px auto;
+}
+input {
+  font-size: 26px;
+}
+.searchButton, .randomButton {
+  font-size: 26px;
+  background: linear-gradient(silver, darkslategray);
+}
+.searchButton:hover, .randomButton:hover {
+  background: linear-gradient(white, red);
+}
+.randomButton {
+  width: 500px;
 }
