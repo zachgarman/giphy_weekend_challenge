@@ -43,3 +43,9 @@ input {
 .randomButton {
   width: 500px;
 }
+label {
+  font-size: 26px;
+  padding: 3px;
+  margin-right: 5px;
+  background-color: gray;
+}
