@@ -4,13 +4,18 @@
     <meta charset="utf-8">
     <title>Learning API's with Star Wars</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-    <script src="script.js"></script>
+    <script src="scripts/client.js"></script>
     <link rel="stylesheet" href="css/styles.css" />
-
-
   </head>
-  <body>
 
+  <body ng-app="starWarsApp" ng-controller="MainController as main">
+
+      <select ng-model="main.selected" ng-change="main.getFilmData()">
+        <option ng-repeat="film in main.films" ng-value="film.url">{{ film.title }}</option>
+      </select>
+    <main ng-class="main.class">
+      <p ng-repeat="line in main.lines track by $index">{{line}}</p>
+    </main>
 
   </body>
 </html>
