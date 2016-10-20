@@ -22,7 +22,7 @@
         <button type="submit" ng-click="main.searchGiphy()">Search the Giphy</button>
       </form>
       <ul>
-        <li ng-repeat="image in main.searchImages | limitTo: main.limit" alt="search result image"><img ng-src="{{image.images.original.url}}" /></li>
+        <li ng-repeat="image in main.searchImages" alt="search result image"><img ng-src="{{image.images.original.url}}" /></li>
       </ul>
           </main>
 
