@@ -2,27 +2,28 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Learning API's with Star Wars</title>
+    <title>Giphy API Practice</title>
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script src="scripts/client.js"></script>
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
 
   <body ng-app="giphyGetter" ng-controller="MainController as main">
+    <h1>Fun with Giphy</h1>
     <main>
       <div class="random">
-        <button ng-click="main.randomGiphy()">Get Random Giphy</button>
-        <img ng-src="{{main.image}}" />
+        <img ng-src="{{main.random}}" alt="random GIF" />
+        <button class="randomGif" ng-click="main.randomGiphy()">Get Random Giphy</button>
       </div>
 
       <form>
         <input type="text" ng-model="main.search">
-        <button type="submit" ng-click="main.searchGiphy() | limitTo:20">Search the Giphy</button>
+        <button type="submit" ng-click="main.searchGiphy()">Search the Giphy</button>
       </form>
-      <ol>
-        <li ng-repeat="image in main.searchImages"><img ng-src="{{image.images.original.url}}" />
-</li>
-      </ol>
+      <ul>
+        <li ng-repeat="image in main.searchImages | limitTo: main.limit" alt="search result image"><img ng-src="{{image.images.original.url}}" /></li>
+      </ul>
           </main>
 
   </body>

@@ -19,13 +19,14 @@ function MainController($http) {
   };
 
   main.searchImages = [];
+
   main.searchGiphy = function () {
     $http.get(searchAPI + main.search.split(' ').join('+') + searchKey)
       .then(function(response){
         main.searchImages = response.data.data;
-        //.images.original.url;
       });
   };
-
-
+  $(function() {
+    main.randomGiphy();
+  });
 }
