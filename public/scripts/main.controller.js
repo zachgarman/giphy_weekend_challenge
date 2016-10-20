@@ -15,10 +15,10 @@ function MainController(giphy) {
 
   main.searchImages = [];
 
-  main.searchGiphy = function () {
-    giphy.searchGiphy(main.search)
-         .then(function(array) {
-           main.searchImages = array;
+  main.searchGiphy = function (searchTerm) {
+    giphy.searchGiphy(searchTerm)
+         .then(function(gifs) {
+           main.searchImages = gifs;
          });
   };
   main.randomGiphy();
