@@ -9,7 +9,7 @@ function MainController(giphy) {
   main.randomGiphy = function() {
     giphy.randomGiphy()
          .then(function(url) {
-           main.random = url;
+           main.random = url.image_url;
          });
   };
 

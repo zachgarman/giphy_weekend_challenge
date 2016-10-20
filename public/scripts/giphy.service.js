@@ -9,7 +9,7 @@ function GiphyAPIService($http) {
   this.randomGiphy = function() {
     return $http.get(randomSearch)
                 .then(function(response) {
-                  return response.data.data.image_url;
+                  return response.data.data;
                   // main.random = response.data.data.image_url;
                 });
   };
