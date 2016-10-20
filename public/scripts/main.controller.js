@@ -18,7 +18,6 @@ function MainController(giphy) {
   main.searchGiphy = function () {
     giphy.searchGiphy(main.search)
          .then(function(array) {
-           console.log(array);
            main.searchImages = array;
          });
   };
