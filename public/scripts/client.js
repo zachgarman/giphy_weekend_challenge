@@ -1,20 +1,23 @@
-var app = angular.module('giphyGetter', []);
+var app = angular.module('starWarsApp', []);
 
 app.controller('MainController', MainController);
 
+var API = 'http://swapi.co/api';
 
 function MainController($http) {
   var main = this;
   console.log('MainController Loaded');
 
-  var randomAPI = 'http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC';
-  var searchAPI = 'http://api.giphy.com/v1/gifs/search?q=';
-  var searchKey = '&api_key=dc6zaTOxFJmzC';
+  main.films = [];
+  main.lines = [];
 
-  main.randomGiphy = function() {
-    $http.get(randomAPI)
+  main.getFilmData = function() {
+    main.lines = [];
+    main.class = '';
+    $http.get(main.selected)
          .then(function(response) {
-           main.random = response.data.data.image_url;
+           main.lines = response.data.opening_crawl.split('\n');
+           main.class = 'scroll';
          });
   };
 

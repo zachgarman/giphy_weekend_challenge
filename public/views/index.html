@@ -6,7 +6,7 @@
     <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
     <script src="scripts/client.js"></script>
-    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
 
   <body ng-app="giphyGetter" ng-controller="MainController as main">
@@ -25,6 +25,7 @@
         <li ng-repeat="image in main.searchImages | limitTo: main.limit" alt="search result image"><img ng-src="{{image.images.original.url}}" /></li>
       </ul>
           </main>
+
 
   </body>
 </html>
