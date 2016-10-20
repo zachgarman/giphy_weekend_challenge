@@ -1,4 +1,4 @@
-var app = angular.module('starWarsApp', []);
+var app = angular.module('giphyGetter', []);
 
 app.controller('MainController', MainController);
 
@@ -8,22 +8,21 @@ function MainController($http) {
   var main = this;
   console.log('MainController Loaded');
 
-  main.films = [];
-  main.lines = [];
+  var randomSearch = 'http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC';
+  var searchAPI = 'http://api.giphy.com/v1/gifs/search?q=';
+  var searchKey = '&api_key=dc6zaTOxFJmzC';
 
-  main.getFilmData = function() {
-    main.lines = [];
-    main.class = '';
-    $http.get(main.selected)
+  main.randomGiphy = function() {
+    $http.get(randomSearch)
          .then(function(response) {
-           main.lines = response.data.opening_crawl.split('\n');
-           main.class = 'scroll';
+           main.random = response.data.data.image_url;
          });
   };
 
   main.searchImages = [];
 
   main.searchGiphy = function () {
+    console.log(searchAPI + main.search.split(' ').join('+') + searchKey);
     $http.get(searchAPI + main.search.split(' ').join('+') + searchKey)
       .then(function(response){
         main.searchImages = response.data.data;
