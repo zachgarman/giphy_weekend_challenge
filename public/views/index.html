@@ -14,7 +14,7 @@
     <h1>Fun with Giphy</h1>
     <main>
       <div class="random">
-        <img class="randomImage" ng-src="{{main.random}}" alt="random GIF" />
+        <a href="{{main.random}}"><img class="randomImage" ng-src="{{main.random}}" alt="random GIF" /></a>
         <button class="randomButton" ng-click="main.randomGiphy()">Get Random Giphy</button>
       </div>
 
@@ -24,7 +24,7 @@
         <button class="searchButton" type="submit" ng-click="main.searchGiphy()">Search the Giphy</button>
       </form>
       <ul>
-        <li ng-repeat="image in main.searchImages | limitTo: main.results" alt="search result image"><img class="searchImage" ng-src="{{image.images.original.url}}" /></li>
+        <li ng-repeat="image in main.searchImages | limitTo: main.results" alt="search result image"><a href="{{image.images.original.url}}"><img class="searchImage" ng-src="{{image.images.original.url}}" /></a></li>
       </ul>
           </main>
 
