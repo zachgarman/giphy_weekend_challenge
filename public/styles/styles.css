@@ -15,7 +15,7 @@ h1 {
 .randomImage {
   width: 500px;
   height: auto;
-  border: 1px solid gray;
+  border: 3px solid gray;
 }
 li {
   display:inline-block;
@@ -24,7 +24,7 @@ li {
 .searchImage {
   height: auto;
   width: 300px;
-  border: 1px solid gray;
+  border: 3px solid gray;
 }
 .randomButton {
   display: block;
