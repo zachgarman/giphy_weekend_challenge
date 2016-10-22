@@ -1,1 +1,1 @@
-var app = angular.module('giphyGetter', []);
+var app = angular.module('giphyGetter', ['ngRoute']);
