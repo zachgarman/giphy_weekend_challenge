@@ -57,10 +57,9 @@ function MainController(giphy, favorite) {
     main.search = '';
   };
 
-  main.getFavorites = function(favorite) {
-    console.log('Trying to get Favorites, in controller');
+  main.getFavorites = function() {
     favorite.getFavorites().then(function(response){
-      console.log(respone);
+      main.favoritedGifs = response;
     });
   };
 }
