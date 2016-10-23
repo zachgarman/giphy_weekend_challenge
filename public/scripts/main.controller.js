@@ -111,21 +111,26 @@ function MainController(giphy, favorite) {
       main.totalFavorites = response.length;
     });
   };
-
-  main.updateFaves = function() {
-    console.log('your updates did not take effect');
-    //nrun Put request
+  // Should update the information on the favorited Gifs
+  main.updateFaves = function($index) {
+    var updateObj = {
+      category: main.updateCategory,
+      id: main.favoritedGifs[$index].id,
+      comment: main.updateComment
+    };
+    favorite.updateFaves(updateObj);
+    main.getFavorites();
+    // run Put request
     main.resetFavIndex();
   };
-
+  // Permanently deletes a favorited Gif.
   main.deleteFav = function($index) {
-    console.log('In Controller, your delete did not happen');
-    console.log($index);
     var id = main.favoritedGifs[$index].id;
-    favorite.deleteFav(id).then(main.getFavorites());
+    if (confirm('Do you really want to hurt me?')) {
+      favorite.deleteFav(id).then(main.getFavorites());
+    }
     main.resetFavIndex();
   };
-
 
   // run getFavorites to update the total # of favorites
   main.getFavorites();

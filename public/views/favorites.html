@@ -4,14 +4,16 @@
   <li ng-repeat="image in main.favoritedGifs" alt="search result image">
     <div class="searchResult">
       <img class="searchImage" ng-src="{{image.url}}" />
-      <button ng-hide="$index==main.updateFav" class="addFavoriteButton" ng-click="main.setFavIndex($index)">Add to Favorites</button>
+      <p class="category">Category: {{image.category}}</p>
+      <p class="comment">Comments: {{image.comment}}</p>
+      <button ng-hide="$index==main.updateFav" class="addFavoriteButton" ng-click="main.setFavIndex($index)">Edit This Favorite</button>
 
       <div ng-show="$index==main.updateFav">
         <form name="favoritesForm">
-          <input id="comment" type="textarea" value="{{image.comment}}" />
+          <input ng-model="main.updateComment" id="comment" type="textarea" value="{{image.comment}}" required/>
           <span>Category: </span>
-          <select>
-            <option value="">{{image.category}}
+          <select ng-model="main.updateCategory" required >
+            <option value="">
             <option value="Reaction">Reaction
             <option value="Work-Related">Work-Related
             <option value="Funny">Funny
@@ -22,7 +24,7 @@
           </select>
           <button class="formButtons" ng-click="main.resetFavIndex()">Cancel</button>
           <button class="formButtons" ng-click="main.deleteFav($index)">Delete</button>
-          <button class="formButtons" ng-click="main.updateFaves($index)">Update</button>
+          <button ng-disabled="!favoritesForm.$valid" class="formButtons" ng-click="main.updateFaves($index)">Update</button>
         </form>
       </div>
     </div>

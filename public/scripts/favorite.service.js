@@ -25,13 +25,23 @@ function FavoriteService($http) {
       });
   };
 
+  this.updateFaves = function (obj) {
+    var id = obj.id;
+    $http({
+      method: 'PUT',
+      url: '/favoriteGifs/' + id,
+      data: obj,
+    }).success(function() {
+      alert('The information has been updated!');
+    });
+  };
+
   this.deleteFav = function (id) {
-    console.log('Trying to delete one');
     return $http({
       method: 'DELETE',
       url: '/favoriteGifs/' + id,
     }).success(function() {
-      console.log('Sent it off to the server!');
+      alert('Your gif has been deleted!');
     });
   };
 
