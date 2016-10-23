@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="assets/vendors/bootstrap.min.css" />
     <link rel="stylesheet" href="styles/styles.css" />
 
-    <base href="/random" />
+    <base href="/main" />
 
   </head>
   <body ng-app="giphyGetter" ng-controller="MainController as main">
@@ -27,8 +27,8 @@
 
         <div class="searchBar">
           <form>
-            <input name="searchImage" type="text" placeholder="Search..."/>
-            <a href="/main"><button class="searchButton" ng-click="main.printSomething()">Submit</button></a>
+            <input ng-model="main.search" name="searchImage" type="text" placeholder="Search..."/>
+            <a href="/main"><button class="searchButton" ng-click="main.searchGiphy(main.search)">Submit</button></a>
           </form>
           <a href="/random"><button id="randomButton" ng-click="main.randomGiphy()">Get a Random Gif</button></a>
         </div>
@@ -38,6 +38,7 @@
     </nav>
 
     <main ng-view>
+      <h2>Does this show?</h2>
     </main>
 
   </body>

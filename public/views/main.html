@@ -1,6 +1,8 @@
-<h2>Random Giphy Results</h2>
-<img ng-src="{{main.random}}" />
-
+<h2 ng-show="main.showGreeting()">Search Results</h2>
+<div ng-hide="main.showGreeting()">
+  <h2>Search for Images!</h2>
+  <p>Or if you dare, test your luck by getting a random gif!</p>
+</div>
 
 <ul>
   <li ng-repeat="image in main.searchImages | limitTo: searches" alt="search result image"><a href="{{image.images.original.url}}"><img ng-class="highlightClass" class="searchImage" ng-src="{{image.images.original.url}}" /></a></li>

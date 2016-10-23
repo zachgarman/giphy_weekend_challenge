@@ -4,8 +4,10 @@ angular.module('giphyGetter')
            templateUrl: 'views/random.html'
          }).when('/favorites', {
            templateUrl: 'views/favorites.html'
-         }).when('/', {
-           templateUrl: 'views/random.html'
+         }).when('/main', {
+           templateUrl: 'views/main.html'
+         }).otherwise({
+           redirectTo: "/main"
          });
 
          $locationProvider.html5Mode(true);

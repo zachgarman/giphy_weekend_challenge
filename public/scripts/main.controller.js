@@ -15,6 +15,10 @@ function MainController(giphy) {
 
   main.searchImages = [];
 
+  main.showGreeting = function(){
+    return main.searchImages.length;
+  }
+
   main.searchGiphy = function (searchTerm) {
     giphy.searchGiphy(searchTerm)
          .then(function(gifs) {
