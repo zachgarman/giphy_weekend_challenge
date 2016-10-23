@@ -31,10 +31,17 @@ function MainController(giphy, favorite) {
     main.show = $index;
   };
 
+  main.setFavIndex = function ($index) {
+    main.updateFav = $index;
+  }
+
   main.resetIndex = function () {
     main.show = -1;
   }
 
+  main.resetFavIndex = function () {
+    main.updateFav = -1;
+  }
   main.showForm = function() {
     return main.show;
   };
@@ -61,5 +68,17 @@ function MainController(giphy, favorite) {
     favorite.getFavorites().then(function(response){
       main.favoritedGifs = response;
     });
+  };
+
+  main.updateFaves = function() {
+    console.log('your updates did not take effect');
+    //nrun Put request
+    main.resetFavIndex();
+  };
+
+  main.deleteFav = function() {
+    console.log('your delete did not happen');
+    // run delete request
+    main.resetFavIndex();
   };
 }

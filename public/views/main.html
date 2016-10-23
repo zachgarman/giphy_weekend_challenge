@@ -5,9 +5,9 @@
 </div>
 
 <ul>
-  <li ng-repeat="image in main.searchImages | limitTo: searches" alt="search result image">
+  <li ng-repeat="image in main.searchImages" alt="search result image">
     <div class="searchResult">
-      <img ng-class="highlightClass" class="searchImage" ng-src="{{image.images.original.url}}" />
+      <img class="searchImage" ng-src="{{image.images.original.url}}" />
       <button ng-hide="$index==main.show" class="addFavoriteButton" ng-click="main.setIndex($index)">Add to Favorites</button>
 
       <div ng-show="$index==main.show">

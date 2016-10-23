@@ -1,1 +1,30 @@
 <h3>Favorites!</h3>
+
+<ul>
+  <li ng-repeat="image in main.favoritedGifs" alt="search result image">
+    <div class="searchResult">
+      <img class="searchImage" ng-src="{{image.url}}" />
+      <button ng-hide="$index==main.updateFav" class="addFavoriteButton" ng-click="main.setFavIndex($index)">Add to Favorites</button>
+
+      <div ng-show="$index==main.updateFav">
+        <form>
+          <input id="comment" type="textarea" placeholder="Add a Comment..." value="{{image.comment}}" />
+          <span>Category: </span>
+          <select>
+            <option value="">{{image.category}}
+            <option value="Reaction">Reaction
+            <option value="Work-Related">Work-Related
+            <option value="Funny">Funny
+            <option value="Angry">Angry
+            <option value="Happy">Happy
+            <option value="Sad">Sad
+            <option value="Random">Random
+          </select>
+          <button class="formButtons" ng-click="main.resetFavIndex()">Cancel</button>
+          <button class="formButtons" ng-click="main.deleteFav()">Delete</button>
+          <button class="formButtons" ng-click="main.updateFaves()">Update</button>
+        </form>
+      </div>
+    </div>
+  </li>
+</ul>
