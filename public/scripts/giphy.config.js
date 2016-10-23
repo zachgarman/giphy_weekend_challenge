@@ -5,7 +5,7 @@ angular.module('giphyGetter')
          }).when('/favorites', {
            templateUrl: 'views/favorites.html'
          }).when('/', {
-           templateUrl: 'views/main.html'
+           templateUrl: 'views/random.html'
          });
 
          $locationProvider.html5Mode(true);

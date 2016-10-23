@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Giphy API Practice</title>
+    <title>The Great Gif Collection</title>
 
     <script src="assets/vendors/angular.min.js"></script>
     <script src="assets/vendors/angular-route.min.js"></script>
@@ -16,21 +16,21 @@
     <link rel="stylesheet" href="assets/vendors/bootstrap.min.css" />
     <link rel="stylesheet" href="styles/styles.css" />
 
-    <base href="/" />
+    <base href="/random" />
 
   </head>
   <body ng-app="giphyGetter" ng-controller="MainController as main">
     <nav class="navbar">
       <div class="navigation">
 
-        <a href="/"><div class="home"><h1>The Great Gif Collection</h1></div></a>
+        <a href="/main"><div class="home"><h1>The Great Gif Collection</h1></div></a>
 
         <div class="searchBar">
           <form>
             <input name="searchImage" type="text" placeholder="Search..."/>
-            <button type="submit">Submit</button>
+            <a href="/main"><button class="searchButton" ng-click="main.printSomething()">Submit</button></a>
           </form>
-          <button id="randomButton" type="submit">Get a Random Gif</button>
+          <a href="/random"><button id="randomButton" ng-click="main.randomGiphy()">Get a Random Gif</button></a>
         </div>
 
         <a href="/favorites"><div class="favorites"><h3>Favorites: <span id="totalFavorites">0</span></h3></div></a>
