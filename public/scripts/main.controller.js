@@ -1,7 +1,7 @@
 angular.module('giphyGetter')
        .controller('MainController', MainController);
 
-function MainController(giphy) {
+function MainController(giphy, favorite) {
   var main = this;
 
   console.log('MainController Loaded');
@@ -38,9 +38,14 @@ function MainController(giphy) {
   };
 
   main.addRandomFavorite = function() {
-    return main.addRandomFavorite;
+    var data = {
+      url: main.random,
+      comment: main.randomComment,
+      category: main.randomCategory
+    };
+    favorite.addRandomFavorite(data);
+    main.showRandomForm();
   };
-
 
   main.searchGiphy = function (searchTerm) {
     giphy.searchGiphy(searchTerm)

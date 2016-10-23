@@ -42,6 +42,7 @@ router.post('/', function(req, res) {
       var url = req.body.url;
       var comment = req.body.comment;
       var category = req.body.category;
+      console.log('req.body', req.body);
 
       client.query('INSERT INTO favorite_gifs (url, comment, category) VALUES ($1, $2, $3) RETURNING*;',
                    [url, comment, category],

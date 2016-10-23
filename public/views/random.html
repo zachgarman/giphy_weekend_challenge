@@ -5,9 +5,9 @@
 
   <div ng-show="main.showRandom">
     <form>
-      <input id="randomComment" type="textarea" placeholder="Add a Comment..."  />
+      <input ng-model="main.randomComment"id="randomComment" type="textarea" placeholder="Add a Comment..."  />
       <span>Category: </span>
-      <select>
+      <select ng-model="main.randomCategory">
         <option></option>
         <option>Reaction</option>
         <option>Work-Related</option>
@@ -18,8 +18,11 @@
         <option>Random</option>
       </select>
       <button class="randomFormButtons" ng-click="main.showRandomForm()">Cancel</button>
-      <button class="randomFormButtons" ng-click="main.showRandomForm()">Submit</button>
+      <button class="randomFormButtons" ng-click="main.addRandomFavorite()">Submit</button>
     </form>
   </div>
+  {{main.random}}
+  {{main.randomComment}}
+  {{main.randomCategory}}
 
 </div>
