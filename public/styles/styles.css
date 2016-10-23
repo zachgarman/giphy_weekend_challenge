@@ -65,7 +65,7 @@ li {
   margin: 0 auto;
   border: 3px solid gray;
 }
-.addFavorite {
+.addFavoriteButton {
   width: 300px;
 }
 .addRandomFavoriteButton {
@@ -74,32 +74,12 @@ li {
 #randomComment {
   width: 320px;
 }
-.formButtons {
+.randomFormButtons {
   width: 200px;
   margin: 10px;
 }
-/*
+footer {
+  text-align: center;
+  margin-top: 50px;
 
-.randomButton {
-  display: block;
-  margin: 10px auto;
 }
-input {
-  font-size: 26px;
-}
-.searchButton, .randomButton {
-  font-size: 26px;
-  background: linear-gradient(silver, darkslategray);
-}
-.searchButton:hover, .randomButton:hover {
-  background: linear-gradient(white, red);
-}
-.randomButton {
-  width: 500px;
-}
-label {
-  font-size: 26px;
-  padding: 3px;
-  margin-right: 5px;
-  background-color: gray;
-}*/

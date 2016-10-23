@@ -26,6 +26,19 @@ function MainController(giphy) {
     return main.showRandom;
   };
 
+  main.setIndex = function ($index) {
+    main.show = $index;
+  };
+
+  main.resetIndex = function () {
+    main.show = -1;
+  }
+
+  main.showForm = function() {
+    return main.show;
+
+  };
+
   main.addRandomFavorite = function() {
     console.log(main.addRandomFavorite);
     return main.addRandomFavorite;
@@ -37,5 +50,4 @@ function MainController(giphy) {
            main.searchImages = gifs;
          });
   };
-  main.randomGiphy();
 }

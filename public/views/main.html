@@ -8,7 +8,26 @@
   <li ng-repeat="image in main.searchImages | limitTo: searches" alt="search result image">
     <div class="searchResult">
       <img ng-class="highlightClass" class="searchImage" ng-src="{{image.images.original.url}}" />
-      <button class="addFavorite" ng-click="main.addFavorite()">Add to Favorites</button>
+      <button ng-hide="$index==main.show" class="addFavoriteButton" ng-click="main.setIndex($index)">Add to Favorites</button>
+
+      <div ng-show="$index==main.show">
+        <form>
+          <input id="comment" type="textarea" placeholder="Add a Comment..."  />
+          <span>Category: </span>
+          <select>
+            <option></option>
+            <option>Reaction</option>
+            <option>Work-Related</option>
+            <option>Funny</option>
+            <option>Angry</option>
+            <option>Happy</option>
+            <option>Sad</option>
+            <option>Random</option>
+          </select>
+          <button class="formButtons" ng-click="main.resetIndex()">Cancel</button>
+          <button class="formButtons" ng-click="main.resetIndex()">Submit</button>
+        </form>
+      </div>
     </div>
   </li>
 </ul>

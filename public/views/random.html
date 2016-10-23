@@ -4,7 +4,7 @@
   <button ng-hide="main.showRandom" class="addRandomFavoriteButton" ng-click="main.showRandomForm()">Add to Favorites</button>
 
   <div ng-show="main.showRandom">
-    <form ng-show="main.showRandom">
+    <form>
       <input id="randomComment" type="textarea" placeholder="Add a Comment..."  />
       <span>Category: </span>
       <select>
@@ -17,8 +17,8 @@
         <option>Sad</option>
         <option>Random</option>
       </select>
-      <button class="formButtons" ng-click="main.showRandomForm()">Cancel</button>
-      <button class="formButtons" ng-click="main.showRandomForm()">Submit</button>
+      <button class="randomFormButtons" ng-click="main.showRandomForm()">Cancel</button>
+      <button class="randomFormButtons" ng-click="main.showRandomForm()">Submit</button>
     </form>
   </div>
 
