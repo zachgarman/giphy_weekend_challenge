@@ -10,9 +10,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
 
 // routers
-app.use('/favorites', favoritesRouter);
+app.use('/favoriteGifs', favoritesRouter);
 
-app.get('/', function(req,res) {
+app.get('/*', function(req,res) {
   res.sendFile(path.join(__dirname, 'public/views/index.html'));
 });
 

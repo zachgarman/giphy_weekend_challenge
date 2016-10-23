@@ -1,16 +1,47 @@
-html {
-  background-size: 100%;
-}
 main {
   text-align: center;
 }
 h1 {
-  text-align: center;
+  text-align: left;
   color: silver;
 }
-.random {
-  margin-bottom: 50px;
+a:hover {
+  text-decoration: none;
 }
+nav {
+  background-color: #222;
+}
+.home {
+  display: inline-block;
+  margin: 10px;
+  position: relative;
+  top: -10px;
+}
+.searchBar {
+  display: inline-block;
+  margin: 20px;
+  margin-left: 40px;
+}
+input {
+  margin-bottom: 15px;
+  margin-right: 3px;
+}
+#randomButton {
+  width: 220px;
+}
+.favorites {
+  display: inline-block;
+  margin-left: 40px;
+  position: relative;
+  top: -10px;
+}
+h3 {
+  color: silver;
+}
+.home:hover, .favorites:hover {
+  background-color: #444;
+}
+/*
 .randomImage {
   width: 500px;
   height: auto;
@@ -47,4 +78,4 @@ label {
   padding: 3px;
   margin-right: 5px;
   background-color: gray;
-}
+}*/

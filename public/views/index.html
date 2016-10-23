@@ -6,8 +6,10 @@
 
     <script src="assets/vendors/angular.min.js"></script>
     <script src="assets/vendors/angular-route.min.js"></script>
-    <script src="scripts/module.js"></script>
     <script src="assets/vendors/jquery.min.js"></script>
+
+    <script src="scripts/module.js"></script>
+    <script src="scripts/giphy.config.js"></script>
     <script src="scripts/main.controller.js"></script>
     <script src="scripts/giphy.service.js"></script>
 
@@ -18,39 +20,34 @@
 
   </head>
 
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <h1 class="title">The Great Gif Collection</h1>
+  <nav class="navbar">
+    <div class="navigation">
+
+      <a href="/"><div class="home"><h1>The Great Gif Collection</h1></div></a>
+
+      <div class="searchBar">
+        <form>
+          <input name="searchImage" type="text" placeholder="Search..."/>
+          <button type="submit">Submit</button>
+        </form>
+        <button id="randomButton" type="submit">Get a Random Gif</button>
       </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="/home">Home</a></li>
-        <li><a href="/favorites">Favorites</a><span> Total: </span></li>
-        <li><input type="text"/></li>
-      </ul>
+
+      <a href="/favorites"><div class="favorites"><h3>Favorites: <span id="totalFavorites">0</span></h3></div></a>
+
     </div>
+
+
   </nav>
+  
 
   <body ng-app="giphyGetter" ng-controller="MainController as main">
-    <h1>Fun with Giphy</h1>
-    <main>
-      <div class="random">
-        <a href="{{main.random}}"><img class="randomImage" ng-src="{{main.random}}" alt="random GIF" /></a>
-        <button class="randomButton" ng-click="main.randomGiphy()">Get Random Giphy</button>
-      </div>
+    <main ng-view>
 
-      <form>
-        <input type="text" ng-model="main.search" placeholder="Search...">
-        <label for="number">Show: </label>
-        <input id="number" type="number" ng-model="searches" ng-init="searches=10" value="10" min="3" max="25" ng-model="main.results" />
-        <button class="searchButton" type="submit" ng-click="main.searchGiphy(main.search)">Search the Giphy</button>
-      </form>
 
-      <ul>
-        <li ng-repeat="image in main.searchImages | limitTo: searches" alt="search result image"><a href="{{image.images.original.url}}"><img ng-class="highlightClass" class="searchImage" ng-src="{{image.images.original.url}}" /></a></li>
-      </ul>
 
     </main>
+
 
 
   </body>
