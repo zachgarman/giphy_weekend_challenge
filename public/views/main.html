@@ -5,5 +5,10 @@
 </div>
 
 <ul>
-  <li ng-repeat="image in main.searchImages | limitTo: searches" alt="search result image"><a href="{{image.images.original.url}}"><img ng-class="highlightClass" class="searchImage" ng-src="{{image.images.original.url}}" /></a></li>
+  <li ng-repeat="image in main.searchImages | limitTo: searches" alt="search result image">
+    <div class="searchResult">
+      <img ng-class="highlightClass" class="searchImage" ng-src="{{image.images.original.url}}" />
+      <button class="addFavorite" ng-click="main.addFavorite()">Add to Favorites</button>
+    </div>
+  </li>
 </ul>

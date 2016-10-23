@@ -1,2 +1,25 @@
 <h2>Random Giphy Results</h2>
-<img ng-src="{{main.random}}" />
+<div class="randomResult">
+  <img ng-src="{{main.random}}" class="randomImage" />
+  <button ng-hide="main.showRandom" class="addRandomFavoriteButton" ng-click="main.showRandomForm()">Add to Favorites</button>
+
+  <div ng-show="main.showRandom">
+    <form ng-show="main.showRandom">
+      <input id="randomComment" type="textarea" placeholder="Add a Comment..."  />
+      <span>Category: </span>
+      <select>
+        <option></option>
+        <option>Reaction</option>
+        <option>Work-Related</option>
+        <option>Funny</option>
+        <option>Angry</option>
+        <option>Happy</option>
+        <option>Sad</option>
+        <option>Random</option>
+      </select>
+      <button class="formButtons" ng-click="main.showRandomForm()">Cancel</button>
+      <button class="formButtons" ng-click="main.showRandomForm()">Submit</button>
+    </form>
+  </div>
+
+</div>

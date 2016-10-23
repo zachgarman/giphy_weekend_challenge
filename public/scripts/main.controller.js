@@ -17,7 +17,19 @@ function MainController(giphy) {
 
   main.showGreeting = function(){
     return main.searchImages.length;
-  }
+  };
+
+  main.showRandom = false;
+  main.showRandomForm = function() {
+    main.showRandom = !main.showRandom
+    console.log(main.showRandom);
+    return main.showRandom;
+  };
+
+  main.addRandomFavorite = function() {
+    console.log(main.addRandomFavorite);
+    return main.addRandomFavorite;
+  };
 
   main.searchGiphy = function (searchTerm) {
     giphy.searchGiphy(searchTerm)

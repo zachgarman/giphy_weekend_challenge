@@ -23,7 +23,7 @@ nav {
   margin: 20px;
   margin-left: 40px;
 }
-input {
+.searchInput {
   margin-bottom: 15px;
   margin-right: 3px;
 }
@@ -43,7 +43,6 @@ h3 {
 .home:hover, .favorites:hover {
   background-color: #444;
 }
-/*
 .randomImage {
   width: 500px;
   height: auto;
@@ -58,6 +57,29 @@ li {
   width: 300px;
   border: 3px solid gray;
 }
+.searchResult {
+  width: 306px;
+}
+.randomResult {
+  width: 506px;
+  margin: 0 auto;
+  border: 3px solid gray;
+}
+.addFavorite {
+  width: 300px;
+}
+.addRandomFavoriteButton {
+  width: 500px;
+}
+#randomComment {
+  width: 320px;
+}
+.formButtons {
+  width: 200px;
+  margin: 10px;
+}
+/*
+
 .randomButton {
   display: block;
   margin: 10px auto;
