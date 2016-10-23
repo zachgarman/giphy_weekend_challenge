@@ -19,36 +19,26 @@
     <base href="/" />
 
   </head>
-
-  <nav class="navbar">
-    <div class="navigation">
-
-      <a href="/"><div class="home"><h1>The Great Gif Collection</h1></div></a>
-
-      <div class="searchBar">
-        <form>
-          <input name="searchImage" type="text" placeholder="Search..."/>
-          <button type="submit">Submit</button>
-        </form>
-        <button id="randomButton" type="submit">Get a Random Gif</button>
-      </div>
-
-      <a href="/favorites"><div class="favorites"><h3>Favorites: <span id="totalFavorites">0</span></h3></div></a>
-
-    </div>
-
-
-  </nav>
-  
-
   <body ng-app="giphyGetter" ng-controller="MainController as main">
+    <nav class="navbar">
+      <div class="navigation">
+
+        <a href="/"><div class="home"><h1>The Great Gif Collection</h1></div></a>
+
+        <div class="searchBar">
+          <form>
+            <input name="searchImage" type="text" placeholder="Search..."/>
+            <button type="submit">Submit</button>
+          </form>
+          <button id="randomButton" type="submit">Get a Random Gif</button>
+        </div>
+
+        <a href="/favorites"><div class="favorites"><h3>Favorites: <span id="totalFavorites">0</span></h3></div></a>
+      </div>
+    </nav>
+
     <main ng-view>
-
-
-
     </main>
-
-
 
   </body>
 </html>

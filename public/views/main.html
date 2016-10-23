@@ -1,4 +1,4 @@
-<h1>This is the main page</h1>
+<h2>Search Results</h2>
 
 <ul>
   <li ng-repeat="image in main.searchImages | limitTo: searches" alt="search result image"><a href="{{image.images.original.url}}"><img ng-class="highlightClass" class="searchImage" ng-src="{{image.images.original.url}}" /></a></li>
