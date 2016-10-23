@@ -34,7 +34,7 @@
           <a href="/random"><button id="randomButton" ng-click="main.randomGiphy()">Get a Random Gif</button></a>
         </div>
 
-        <a href="/favorites"><div class="favorites" ng-click="main.getFavorites()"><h3>Favorites: <span id="totalFavorites">0</span></h3></div></a>
+        <a href="/favorites"><div class="favorites" ng-click="main.getFavorites()"><h3>Favorites: <span id="totalFavorites">{{ main.totalFavorites || 0 }}</span></h3></div></a>
       </div>
     </nav>
 

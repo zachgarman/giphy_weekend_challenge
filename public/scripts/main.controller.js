@@ -47,13 +47,16 @@ function MainController(giphy, favorite) {
   };
 
   main.addRandomFavorite = function() {
-    var data = $.param({
+    var data = {
       url: main.random,
       comment: main.randomComment,
       category: main.randomCategory
-    });
-    favorite.addRandomFavorite(data);
+    };
+    favorite.addFavorite(data);
+    // resets form so it is empty
     main.showRandomForm();
+    // updates favorites page and the favorites number
+    main.getFavorites();
   };
 
   main.searchGiphy = function (searchTerm) {
@@ -67,6 +70,7 @@ function MainController(giphy, favorite) {
   main.getFavorites = function() {
     favorite.getFavorites().then(function(response){
       main.favoritedGifs = response;
+      main.totalFavorites = response.length;
     });
   };
 
@@ -81,4 +85,7 @@ function MainController(giphy, favorite) {
     // run delete request
     main.resetFavIndex();
   };
+
+  // run getFavorites to update the total # of favorites
+  main.getFavorites()
 }
