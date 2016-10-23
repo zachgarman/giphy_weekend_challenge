@@ -9,7 +9,6 @@ function FavoriteService($http) {
   };
 
   this.addFavorite = function(fav) {
-    console.log(fav);
 
     $http({
       method: 'POST',
@@ -24,24 +23,25 @@ function FavoriteService($http) {
       },
       data: fav
     }).success(function() {
-      console.log('post worked');
+      alert('Your item was added!\n Enjoy your Gif!');
     });
   };
-
-//   $http({
-//   url: 'some/api/endpoint',
-//   method: 'POST',
-//   data: $httpParamSerializerJQLike($scope.appForm.data), // Make sure to inject the service you choose to the controller
-//   headers: {
-//     'Content-Type': 'application/x-www-form-urlencoded' // Note the appropriate header
-//   }
-// }).success(function(response) { /* do something here */ });
 
   this.getFavorites = function () {
     return $http.get('/favoriteGifs')
       .then(function (response) {
         return response.data;
       });
-};
+  };
+
+  this.deleteFav = function (id) {
+    console.log('Trying to delete one');
+    $http({
+      method: 'DELETE',
+      url: '/favoriteGifs/' + id,
+    }).success(function() {
+      console.log('Sent it off to the server!');
+    });
+  };
 
 }

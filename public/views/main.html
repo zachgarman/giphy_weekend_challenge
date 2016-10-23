@@ -11,10 +11,10 @@
       <button ng-hide="$index==main.show" class="addFavoriteButton" ng-click="main.setIndex($index)">Add to Favorites</button>
 
       <div ng-show="$index==main.show">
-        <form>
-          <input id="comment" type="textarea" placeholder="Add a Comment..."  />
+        <form name="searchForm">
+          <input id="$index" ng-model="main.comment" type="textarea" placeholder="Add a Comment..." required  />
           <span>Category: </span>
-          <select>
+          <select ng-model="main.category" required>
             <option value="">
             <option value="Reaction">Reaction
             <option value="Work-Related">Work-Related
@@ -25,7 +25,7 @@
             <option value="Random">Random
           </select>
           <button class="formButtons" ng-click="main.resetIndex()">Cancel</button>
-          <button class="formButtons" ng-click="main.resetIndex()">Submit</button>
+          <button ng-disabled="!searchForm.$valid" class="formButtons" ng-click="main.addFavorite($index)">Submit</button>
         </form>
       </div>
     </div>

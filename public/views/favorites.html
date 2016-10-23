@@ -7,8 +7,8 @@
       <button ng-hide="$index==main.updateFav" class="addFavoriteButton" ng-click="main.setFavIndex($index)">Add to Favorites</button>
 
       <div ng-show="$index==main.updateFav">
-        <form>
-          <input id="comment" type="textarea" placeholder="Add a Comment..." value="{{image.comment}}" />
+        <form name="favoritesForm">
+          <input id="comment" type="textarea" value="{{image.comment}}" />
           <span>Category: </span>
           <select>
             <option value="">{{image.category}}
