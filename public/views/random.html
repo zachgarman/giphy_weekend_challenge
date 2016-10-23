@@ -4,25 +4,22 @@
   <button ng-hide="main.showRandom" class="addRandomFavoriteButton" ng-click="main.showRandomForm()">Add to Favorites</button>
 
   <div ng-show="main.showRandom">
-    <form>
-      <input ng-model="main.randomComment"id="randomComment" type="textarea" placeholder="Add a Comment..."  />
+    <form name="randomForm">
+      <input name="randomComment" ng-model="main.randomComment" id="randomComment" type="text" placeholder="Add a Comment..." required  />
       <span>Category: </span>
-      <select ng-model="main.randomCategory">
-        <option></option>
-        <option>Reaction</option>
-        <option>Work-Related</option>
-        <option>Funny</option>
-        <option>Angry</option>
-        <option>Happy</option>
-        <option>Sad</option>
-        <option>Random</option>
+      <select ng-model="main.randomCategory" required>
+        <option value="">
+        <option value="Reaction">Reaction
+        <option value="Work-Related">Work-Related
+        <option value="Funny">Funny
+        <option value="Angry">Angry
+        <option value="Happy">Happy
+        <option value="Sad">Sad
+        <option value="Random">Random
       </select>
       <button class="randomFormButtons" ng-click="main.showRandomForm()">Cancel</button>
-      <button class="randomFormButtons" ng-click="main.addRandomFavorite()">Submit</button>
+      <button ng-disabled="!randomForm.$valid" class="randomFormButtons" ng-click="main.addRandomFavorite()">Submit</button>
     </form>
   </div>
-  {{main.random}}
-  {{main.randomComment}}
-  {{main.randomCategory}}
 
 </div>

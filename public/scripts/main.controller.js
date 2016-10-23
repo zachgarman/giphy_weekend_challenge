@@ -22,6 +22,8 @@ function MainController(giphy, favorite) {
   main.showRandom = false;
   main.showRandomForm = function() {
     main.showRandom = !main.showRandom
+    main.randomComment = '';
+    main.randomCategory = '';
     return main.showRandom;
   };
 
@@ -38,11 +40,11 @@ function MainController(giphy, favorite) {
   };
 
   main.addRandomFavorite = function() {
-    var data = {
+    var data = $.param({
       url: main.random,
       comment: main.randomComment,
       category: main.randomCategory
-    };
+    });
     favorite.addRandomFavorite(data);
     main.showRandomForm();
   };
@@ -52,5 +54,13 @@ function MainController(giphy, favorite) {
          .then(function(gifs) {
            main.searchImages = gifs;
          });
+    main.search = '';
+  };
+
+  main.getFavorites = function(favorite) {
+    console.log('Trying to get Favorites, in controller');
+    favorite.getFavorites().then(function(response){
+      console.log(respone);
+    });
   };
 }
