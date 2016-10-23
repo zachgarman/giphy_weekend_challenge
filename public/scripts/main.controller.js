@@ -22,7 +22,6 @@ function MainController(giphy) {
   main.showRandom = false;
   main.showRandomForm = function() {
     main.showRandom = !main.showRandom
-    console.log(main.showRandom);
     return main.showRandom;
   };
 
@@ -36,13 +35,12 @@ function MainController(giphy) {
 
   main.showForm = function() {
     return main.show;
-
   };
 
   main.addRandomFavorite = function() {
-    console.log(main.addRandomFavorite);
     return main.addRandomFavorite;
   };
+
 
   main.searchGiphy = function (searchTerm) {
     giphy.searchGiphy(searchTerm)
