@@ -60,5 +60,30 @@ router.post('/', function(req, res) {
   });
 });
 
+router.delete('/:id', function(req, res) {
+  var id = req.params.id;
+  pool.connect(function (err, client, done) {
+    try {
+      if (err) {
+        console.log('Error connnecting to the DB', err);
+        res.sendStatus(500);
+        return;
+      }
+
+      client.query('DELETE FROM favorite_gifs WHERE id = $1;',
+                   [id],
+                   function(err, result) {
+                    if (err) {
+                      console.log('Error querying the DB', err);
+                      res.sendStatus(500);
+                      return;
+                    }
+        res.sendStatus(200);
+      });
+    } finally {
+      done();
+    }
+  });
+});
 
 module.exports = router;

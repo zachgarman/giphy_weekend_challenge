@@ -9,18 +9,9 @@ function FavoriteService($http) {
   };
 
   this.addFavorite = function(fav) {
-
     $http({
       method: 'POST',
       url: '/favoriteGifs',
-      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-      // What is this and why does it work?  I don't know.
-      transformRequest: function(obj) {
-        var str = [];
-        for(var p in obj)
-        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-        return str.join("&");
-      },
       data: fav
     }).success(function() {
       alert('Your item was added!\n Enjoy your Gif!');
@@ -36,7 +27,7 @@ function FavoriteService($http) {
 
   this.deleteFav = function (id) {
     console.log('Trying to delete one');
-    $http({
+    return $http({
       method: 'DELETE',
       url: '/favoriteGifs/' + id,
     }).success(function() {

@@ -69,7 +69,6 @@ function MainController(giphy, favorite) {
     var url = main.gifTracker[$index];
 
     var data = {
-      
       url: url,
       comment: main.comment,
       category: main.category
@@ -106,6 +105,7 @@ function MainController(giphy, favorite) {
   // The get function that pulls in all favorites from the DB and also updates
   // the total number of favorites displayed in the search bar.
   main.getFavorites = function() {
+    main.favoritedIDs = {};
     favorite.getFavorites().then(function(response){
       main.favoritedGifs = response;
       main.totalFavorites = response.length;
@@ -118,14 +118,15 @@ function MainController(giphy, favorite) {
     main.resetFavIndex();
   };
 
-  main.deleteFav = function() {
+  main.deleteFav = function($index) {
     console.log('In Controller, your delete did not happen');
-    favorite.deleteFav(id);
-    // run delete request
+    console.log($index);
+    var id = main.favoritedGifs[$index].id;
+    favorite.deleteFav(id).then(main.getFavorites());
     main.resetFavIndex();
   };
 
 
   // run getFavorites to update the total # of favorites
-  main.getFavorites()
+  main.getFavorites();
 }

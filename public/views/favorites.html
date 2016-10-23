@@ -21,8 +21,8 @@
             <option value="Random">Random
           </select>
           <button class="formButtons" ng-click="main.resetFavIndex()">Cancel</button>
-          <button class="formButtons" ng-click="main.deleteFav()">Delete</button>
-          <button class="formButtons" ng-click="main.updateFaves()">Update</button>
+          <button class="formButtons" ng-click="main.deleteFav($index)">Delete</button>
+          <button class="formButtons" ng-click="main.updateFaves($index)">Update</button>
         </form>
       </div>
     </div>
