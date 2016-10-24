@@ -24,14 +24,14 @@
     <nav class="navbar">
       <div class="navigation">
 
-        <a href="/main"><div class="home"><h1>The Great Gif Collection</h1></div></a>
+        <a class="topButton" href="/main"><div class="home"><h1>The Great Gif Collection</h1></div></a>
 
         <div class="searchBar">
           <form>
             <input class="searchInput" ng-model="main.search" name="searchImage" type="text" placeholder="Search..."/>
             <a href="/main"><button class="searchButton" ng-click="main.searchGiphy(main.search)">Submit</button></a>
           </form>
-          <a href="/random"><button id="randomButton" ng-click="main.randomGiphy()">Get a Random Gif</button></a>
+          <a class="topButton" href="/random"><button id="randomButton" ng-click="main.randomGiphy()">Get a Random Gif</button></a>
         </div>
 
         <a href="/favorites"><div class="favorites" ng-click="main.getFavorites()"><h3>Favorites: <span id="totalFavorites">{{ main.totalFavorites || 0 }}</span></h3></div></a>

@@ -4,13 +4,15 @@
   <li ng-repeat="image in main.favoritedGifs" alt="search result image">
     <div class="searchResult">
       <img class="searchImage" ng-src="{{image.url}}" />
-      <p class="category">Category: {{image.category}}</p>
-      <p class="comment">Comments: {{image.comment}}</p>
+      <div class="info">
+        <p class="description"><span class="heading">Category:</span> {{image.category}}</p>
+        <p class="description"><span class="heading"> Comments:</span> {{image.comment}}</p>
+      </div>
       <button ng-hide="$index==main.updateFav" class="addFavoriteButton" ng-click="main.setFavIndex($index)">Edit This Favorite</button>
 
       <div ng-show="$index==main.updateFav">
         <form name="favoritesForm">
-          <input ng-model="main.updateComment" id="comment" type="textarea" value="{{image.comment}}" required/>
+          <input ng-model="main.updateComment" id="comment" type="textarea" value="{{image.comment}}" placeholder="Enter new comment..." required/>
           <span>Category: </span>
           <select ng-model="main.updateCategory" required >
             <option value="">

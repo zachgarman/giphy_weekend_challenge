@@ -29,6 +29,10 @@ nav {
 }
 #randomButton {
   width: 220px;
+  color: black;
+}
+.searchButton {
+  color: black;
 }
 .favorites {
   display: inline-block;
@@ -40,8 +44,17 @@ nav {
 h3 {
   color: silver;
 }
-.home:hover, .favorites:hover {
-  background-color: #444;
+.home, .favorites {
+  background: linear-gradient(black, gray);
+  box-shadow: 0 0 4px 2px rgba(255, 255, 255, 0.7)
+}
+.home:hover, .favorites:hover{
+  background: linear-gradient(to top, darkslategray, white);
+  text-decoration: none;
+    box-shadow: 0 0 5px 4px rgba(255, 255, 255, 0.7)
+}
+.home:hover h1, .favorites:hover h3 {
+  color:black;
 }
 .randomImage {
   width: 500px;
@@ -54,11 +67,11 @@ li {
 }
 .searchImage {
   height: auto;
-  width: 300px;
+  width: 350px;
   border: 3px solid gray;
 }
 .searchResult {
-  width: 306px;
+  width: 356px;
 }
 .randomResult {
   width: 506px;
@@ -68,7 +81,8 @@ li {
   border: 3px solid gray;
 }
 .addFavoriteButton {
-  width: 300px;
+  width: 350px;
+  background:
 }
 .addRandomFavoriteButton {
   width: 500px;
@@ -83,5 +97,31 @@ li {
 footer {
   text-align: center;
   margin-top: 50px;
-
+}
+.favoritesInput {
+  margin: 8px
+}
+.formButtons {
+  margin: 10px;
+  width: 150px;
+}
+.formButtons, .addRandomFavoriteButton, .addFavoriteButton,
+#randomButton, .searchButton, .randomFormButtons{
+  background: linear-gradient(silver, darkgray);
+}
+.formButtons:hover, .addRandomFavoriteButton:hover,
+.addFavoriteButton:hover, #randomButton:hover, .searchButton:hover,
+.randomFormButtons:hover {
+  background: linear-gradient(darkslategray, slategray);
+  color: white;
+}
+.heading {
+  font-weight: bold;
+  text-decoration: underline;
+}
+.info {
+  text-align: left;
+}
+.description {
+  margin: 5px 0 5px 10px;
 }
